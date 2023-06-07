@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="premiumize.css?v=1.9">
+ </head>
+<body>
+  <div class="container">
+    <h2>Premiumize.me Direct Download</h2>
+    <label for="magnetLink">Magnet Link:</label>
+    <input type="text" id="search-input" placeholder="Paste magnet link here">
+
+    <button onclick="searchMagnet()">Start Download</button>
+   </div>
+
+<div id="downloadLink"></div>
+
+<div id="loadingIndicator">
+  <div id="status"></div>
+  <div id="progress">
+    <div class="progressBar">
+      <div class="progressBarInner"></div>
+    </div>
+  </div>
+</div>
+
+<div id="streamBlock" class="popup-container">
+  <div class="popup-content">
+    <div class="video-container">
+      <video id="videoPlayer" controls></video>
+      <span class="close-button" onclick="closeStreamBlock()">&#10005;</span>
+    </div>
+    <p><a id="vlcLink" href="#" target="_blank">Open in VLC Player</a></p>
+  </div>
+</div>
+
+<div class="apikey-overlay"></div>
+<div class="apikey-popup">
+  <span class="apikey-close">&times;</span>
+  <h2>Premiumize API Key</h2>
+  <p>Please enter your Premiumize.me API key below to access more features.</p>
+  <input type="text" id="apikey-input" placeholder="Enter your API key">
+  <button id="apikey-submit">Submit</button>
+</div>
+
+<script>
+function searchMagnet() {
+  var magnetLink = document.getElementById('search-input').value.trim();
+  if (apiKey) {
+    checkCache(magnetLink).then(isCached => {
+      if (isCached) {
+        console.log('File is in the cache');
+        const streamNow = document.createElement('button');
+        streamNow.href = '#';
+        streamNow.textContent = '  Stream Now';
+        streamNow.classList.add('stream-now-button');
+        streamNow.addEventListener('click', () => {
+          directLink(magnetLink);
+        });
+        torrentItem.appendChild(streamNow);
+      } else {
+        console.log('File is not in the cache');
+        // Maybe add createTransfer here..........
+      }
+    });
+  }
+}
+</script>
+
+<script src="premiumize.js?v=1.39"></script>
+
+</body>
+</html>
