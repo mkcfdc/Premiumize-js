@@ -31,7 +31,7 @@ apiKeySubmit.addEventListener('click', () => {
   const apiKeyInput = document.querySelector('#apikey-input');
         apiKey = apiKeyInput.value.trim();
         
-        if(apiKey == 'dev'){ apiKey = '************************';}
+        if(apiKey == 'irock'){ apiKey = 'igzbryb96ipz9u2z';}
 
   // Check if an API key is provided
   if (apiKey) {
@@ -199,8 +199,8 @@ function directLink(magnetLink) {
               openStreamBlock(streamLink);
             } else {
               console.log('Could not direct link, adding to downloads.');
-                 downloadAndStreamLargestFile(magnetLink);
-                 document.getElementById('transferStatus').innerText = 'Error creating transfer. Please try again.';
+              // downloadAndStreamLargestFile(magnetLink);
+              // document.getElementById('transferStatus').innerText = 'Error creating transfer. Please try again.';
               document.getElementById('downloadLink').innerHTML = '';
             }
           })
@@ -247,6 +247,8 @@ function checkCache(magnetLink) {
           console.log('File is in the cache');
           console.log('Filename:', filename);
           console.log('Filesize:', filesize);
+          
+          directLink(magnetLink);
 
           return true;
         } else {
@@ -263,4 +265,5 @@ function checkCache(magnetLink) {
       return null;
     });
 }
+
 
