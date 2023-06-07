@@ -1,0 +1,114 @@
+    #transferStatus {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    #downloadLink {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    #loadingIndicator {
+      text-align: center;
+    }
+
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 99;
+}
+
+.popup-content {
+  position: relative;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+}
+
+#videoPlayer {
+  width: 100%;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#vlcLink {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+#status {
+  margin-bottom: 10px;
+}
+
+#progress {
+  margin-bottom: 20px;
+}
+
+.progressBar {
+  width: 100%;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.progressBarInner {
+  width: 0%;
+  height: 100%;
+  background-color: #4CAF50;
+  transition: width 0.3s ease-in-out;
+}
+
+.progressBar .progressBarInner {
+  height: 100%;
+  background-color: #4CAF50;
+  transition: width 0.3s ease-in-out;
+}
+
+.progressBar .progress {
+  background-color: #4CAF50;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.apikey-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  color: #000;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 89;
+}
+
+.apikey-popup .apikey-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
