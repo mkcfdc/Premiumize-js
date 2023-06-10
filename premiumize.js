@@ -31,8 +31,6 @@ apiKeySubmit.addEventListener('click', () => {
   const apiKeyInput = document.querySelector('#apikey-input');
         apiKey = apiKeyInput.value.trim();
         
-        if(apiKey == 'irock'){ apiKey = 'igzbryb96ipz9u2z';}
-
   // Check if an API key is provided
   if (apiKey) {
     // Store the API key in local storage or any other suitable method
